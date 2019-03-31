@@ -6,6 +6,7 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
+#include "proc.c" // |J|
 
 int
 sys_fork(void)
@@ -40,6 +41,20 @@ int
 sys_getpid(void)
 {
   return myproc()->pid;
+}
+
+int // |J|
+sys_getprocs(void)
+{
+  struct proc *p;
+  int contador = 0;
+  release(&ptable.lock);
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+    {
+      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) contador++;
+    }
+    
+  return contador;
 }
 
 int

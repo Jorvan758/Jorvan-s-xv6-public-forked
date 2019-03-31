@@ -1,0 +1,14 @@
+language: c
+script: make && make fs.img
+deploy:
+  provider: releases
+  api_key:
+    secure: F01IwG5c0J7/7v7l2SWj13BJmOgOZw5ncVAgCi22YGXVq8E5dSnHhyPkH8x24ZzKU21zy6s1PKsPbNhijOhot18tOr6VgG46Y7IPnZPxuRZJ+m+LKSEWNrb5fx6Jt0UtU5lg9Ir85xH2cs1y8D7OCgy67p52+xvCSGmL2S1gX+DNtz/FoIBWw/lBHyqgBoXjN3oJktJbar1vBXu9+Z0LtIArkzCERQNbl63xckfkPgXdwSHYoITbeqJheURYEFO0+bo82F1RcDBX69Su88S376OxRRcGfGRAQRUuJuI+qa75qfsoWbvpOJnl83oizlV2NS6F2DEEeF3QVhmqYisH/aPyev7OLdh/FBxk/cgobfwMMsjFRYxTQYwZxdihMct9GHmOmvpecONUuZyH19bLZ0EzkHmeG8EEx7WUWHdSxT9HlJIXEheO1B/CpW7jr9Ym/Jwwb3MQauCm+382WswQb2JnpyRCs4d5pFVae0nG+cob3224wClXb3eQ3G+WGPKtfjB48YmF871jyZCOxvAp9zS995Eu3i99WtGVgiYT0czhG0xkva1dNDEYaLgad4jVwwExz+LVjO4apcpe3Dt+4e3vSXXYgU8yXqf/itJLqMdEKFTPmbDAv2wT1aS4Twb3saWO88qMwODYoKVjrAyxmlnM9QYzU1/w3uRcTuCGXNE=
+  file:
+    - fs.img
+    - xv6.img
+  skip_cleanup: true
+  on:
+    repo: Jorvan758/xv6-public
+    branch: project_1
+  tags: true
