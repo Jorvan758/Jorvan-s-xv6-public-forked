@@ -54,7 +54,7 @@ sys_getprocs(void)
       if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) contador++;
     }*/
     
-  return 3//contador;
+  return 3;//contador;
 }
 
 int
