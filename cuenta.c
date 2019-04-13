@@ -1,5 +1,6 @@
 // |J|
-
+sudo apt-get install gcc-multilib
+sudo apt-get install g++-multilib
 #include <stdlib.h>
 #include <stdio.h>
 /*#include "types.h"
