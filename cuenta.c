@@ -1,6 +1,7 @@
 // |J|
 
-#include <stdlib.h>
+//#include <stdlib.h>
+#include <stdio.h>
 /*#include "types.h"
 #include "x86.h"
 #include "defs.h"
@@ -12,7 +13,7 @@
 #include "syscall.c"*/
 
 int main(void) {
-    cprintf("La cantidad de procesos en ejecucion en la CPU es %i\n", getprocs());
+    printf("La cantidad de procesos en ejecucion en la CPU es %i\n", getprocs());
     //exit();
     return 1;
     }
