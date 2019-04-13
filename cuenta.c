@@ -9,7 +9,7 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
-#include "syscall.h"
+#include "syscall.c"
 
 int main(void) {
     cprintf("La cantidad de procesos en ejecucion en la CPU es %i\n", getprocs());
