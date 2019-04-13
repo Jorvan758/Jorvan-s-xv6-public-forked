@@ -2,7 +2,6 @@ language: c
 script: make
 language: c
 script: make && make fs.img
-sudo: true
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name Jorvan758
