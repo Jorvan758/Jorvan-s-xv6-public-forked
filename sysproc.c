@@ -46,14 +46,14 @@ sys_getpid(void)
 int // |J|
 sys_getprocs(void)
 {
-  struct proc *p;
+  /*struct proc *p;
   int contador = 0;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
       if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) contador++;
-    }
+    }*/
     
-  return contador;
+  return 3;//contador;
 }
 
 int
