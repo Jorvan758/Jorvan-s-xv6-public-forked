@@ -51,7 +51,14 @@ sys_getpid(void)
 int
 sys_getprocs(void)
 {
-  return 3;
+  struct proc *p;
+  int contador = 0;
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+    {
+      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) contador++;
+    }
+    
+  return contador;
 }
 
 int
