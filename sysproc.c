@@ -42,7 +42,7 @@ sys_getpid(void)
   return myproc()->pid;
 }
 
-int // |J|
+int
 sys_getprocs(void)
 {
   /*struct proc *p;
