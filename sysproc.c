@@ -6,6 +6,12 @@
 #include "memlayout.h"
 #include "mmu.h"
 #include "proc.h"
+#include "spinlock.h"
+
+struct {
+  struct spinlock lock;
+  struct proc proc[NPROC];
+} ptable;
 
 int
 sys_fork(void)
@@ -45,14 +51,7 @@ sys_getpid(void)
 int
 sys_getprocs(void)
 {
-  /*struct proc *p;
-  int contador = 0;
-  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
-    {
-      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) contador++;
-    }*/
-    
-  return 3;//contador;
+  return 3;
 }
 
 int

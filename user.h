@@ -20,10 +20,10 @@ int mkdir(const char*);
 int chdir(const char*);
 int dup(int);
 int getpid(void);
-int getprocs(void);
 char* sbrk(int);
 int sleep(int);
 int uptime(void);
+int getprocs(void);
 
 // ulib.c
 int stat(const char*, struct stat*);
