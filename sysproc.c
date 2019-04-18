@@ -69,7 +69,6 @@ sys_showprocs(void)
     {
       if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s \n", p->pid, p->name);;
     }
-  exit();
   return 0;
 }
 

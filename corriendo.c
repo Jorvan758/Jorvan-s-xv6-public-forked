@@ -4,6 +4,6 @@
 #include "user.h"
 
 int main(void) {
-    showprocs();
+    int a = showprocs();
     exit();
     }
