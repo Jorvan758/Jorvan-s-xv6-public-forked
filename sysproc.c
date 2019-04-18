@@ -64,7 +64,7 @@ sys_getprocs(void)
 int
 sys_showprocs(void)
 {
-  int n;
+  int n = 0;
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
