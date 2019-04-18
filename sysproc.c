@@ -65,12 +65,10 @@ int
 sys_showprocs(void)
 {
   struct proc *p;
-  int contador = 0;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
       if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s \n", p->pid, p->name);;
     }
-    
   return 0;
 }
 
