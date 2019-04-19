@@ -68,7 +68,7 @@ sys_showprocs(void)
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
-      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s \n", p->pid, p->name);
+      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s %s \n", p->pid, p->state, p->name);
     }
   exit();
   return 0;

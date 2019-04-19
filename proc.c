@@ -326,14 +326,22 @@ scheduler(void)
   struct cpu *c = mycpu();
   c->proc = 0;
   
+  int boleto = 2; //Los boletos deben ser impares
+  
   for(;;){
     // Enable interrupts on this processor.
     sti();
 
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+    
+    //Da un nuevo número.
+    boleto *= 2;
+    boleto = boleto%100; //40
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       if(p->state != RUNNABLE)
+        continue;
+      if((p+1)*2 != boleto)
         continue;
 
       // Switch to chosen process.  It is the process's job
