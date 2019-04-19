@@ -341,7 +341,7 @@ scheduler(void)
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       if(p->state != RUNNABLE)
         continue;
-      if((p+1)*2 != boleto)
+      if(((p->pid)+1)*2 != boleto)
         continue;
 
       // Switch to chosen process.  It is the process's job
