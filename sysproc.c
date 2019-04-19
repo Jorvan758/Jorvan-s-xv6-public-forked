@@ -64,13 +64,13 @@ sys_getprocs(void)
 int
 sys_showprocs(void)
 {
-  int n = 0;
+  //int n = 0;
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
-      n++;//if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s \n", p->pid, p->name);;
+      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s \n", p->pid, p->name);;
     }
-  return n;
+  return 0;
 }
 
 int

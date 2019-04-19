@@ -5,6 +5,6 @@
 
 int main(void) {
     //int a = showprocs();
-    printf(1,"Bien %d\n", showprocs());
+    showprocs();//printf(1,"Bien %d\n", showprocs());
     exit();
     }
