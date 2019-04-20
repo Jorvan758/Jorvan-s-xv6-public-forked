@@ -362,15 +362,15 @@ scheduler(void)
     acquire(&ptable.lock);
 
     boletostotal = loteriatotal();
-    /*if (boletostotal > 0)
+    if (boletostotal > 0)
       {
       boletoganador = randgen(contadort);
       }
     if (boletostotal < boletoganador)
       {
       boletoganador = (boletoganador%boletostotal);
-      }*/
-    boletoganador = randgen(contadort);
+      }
+    //boletoganador = randgen(contadort);
     cprintf("%d %d \n", boletostotal, boletoganador);
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       /*if(p->state == RUNNABLE)
