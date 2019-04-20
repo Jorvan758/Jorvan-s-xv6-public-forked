@@ -366,9 +366,9 @@ scheduler(void)
       {
       boletoganador = randgen(contadort);
       }
-    if (boletostotal < boletoganador)
+    while (boletostotal < boletoganador)
       {
-      boletoganador = (boletoganador%boletostotal);
+      boletoganador -= boletostotal;
       }
     //boletoganador = randgen(contadort);
     cprintf("%d %d \n", boletostotal, boletoganador);
