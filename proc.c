@@ -86,8 +86,8 @@ allocproc(void)
   return 0;
 
 found:
+  //p->boletos = 500;
   p->state = EMBRYO;
-  p->boletos = 500;
   p->pid = nextpid++;
 
   release(&ptable.lock);
