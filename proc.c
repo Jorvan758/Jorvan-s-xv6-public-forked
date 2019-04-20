@@ -325,9 +325,9 @@ int loteriatotal(void)
       }
   return boletostotales;
   }
-int randgen(unsigned long a)
+int randgen(long long int a)
   {
-  unsigned long b=279470273,c=4294967291;
+  long long int b=279470273,c=4294967291;
   return (a*b)%c;
   }
 //PAGEBREAK: 42
@@ -345,7 +345,8 @@ scheduler(void)
   struct cpu *c = mycpu();
   c->proc = 0;
   
-  int boletostotal, boletoganador, contadort = 0; //Los boletos deben ser impares
+  int boletostotal, boletoganador;
+  int contadort = 0;
   
   for(;;){
     contadort++;
