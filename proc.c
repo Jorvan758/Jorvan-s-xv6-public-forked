@@ -325,9 +325,9 @@ int loteriatotal(void)
       }
   return boletostotales;
   }
-int randgen(long long int a)
+int randgen(long int a)
   {
-  long long int b=279470273,c=4294967291;
+  long int b=79470273,c=294967291; //4294967291
   return (a*b)%c;
   }
 //PAGEBREAK: 42
