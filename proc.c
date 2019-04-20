@@ -312,7 +312,7 @@ wait(void)
   }
 }
 
-/*int loteriatotal(void)
+int loteriatotal(void)
   {
   struct proc *p;
   int boletostotales = 0;
@@ -327,9 +327,9 @@ wait(void)
   }
 int randgen(long int a)
   {
-  long int b=79470273,c=294967291; //4294967291
+  long int b=470273,c=967291;
   return (a*b)%c;
-  }*/
+  }
 //PAGEBREAK: 42
 // Per-CPU process scheduler.
 // Each CPU calls scheduler() after setting itself up.
