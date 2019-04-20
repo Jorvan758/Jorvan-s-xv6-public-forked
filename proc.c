@@ -361,9 +361,9 @@ scheduler(void)
       {
       boletoganador = randgen(contadort);
       }
-    if (boletostotal < boletoganador)
+    while (boletostotal < boletoganador)
       {
-      boletoganador %= boletostotal;
+      boletoganador -= boletostotal;
       }
     
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
