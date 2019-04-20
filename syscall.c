@@ -133,7 +133,7 @@ static int (*syscalls[])(void) = {
 };
 
 //Extra
-char* nomscall[23] = {
+/*char* nomscall[23] = {
   "fork",    
   "exit",   
   "wait",   
@@ -158,26 +158,26 @@ char* nomscall[23] = {
   "getprocs",
   "showprocs"
 };
-int contador = 0;
+int contador = 0;*/
 
 void
 syscall(void)
 {
   //Más extra
-  if (contador == NULL)
+  /*if (contador == NULL)
     {
     for (int i = 0; i < sizeof(todoscall)/sizeof(todoscall[0]); i++)
       {
       todoscall[i] == 0;
       contador++;
       }
-    }
+    }*/
 
   int num;
   struct proc *curproc = myproc();
 
   num = curproc->tf->eax;
-  todoscall[num-1]++; //Último extra
+  //todoscall[num-1]++; //Último extra
   if(num > 0 && num < NELEM(syscalls) && syscalls[num]) {
     curproc->tf->eax = syscalls[num]();
   } else {

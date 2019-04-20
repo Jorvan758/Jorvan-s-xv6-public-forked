@@ -192,5 +192,5 @@ void            clearpteu(pde_t *pgdir, char *uva);
 #define NELEM(x) (sizeof(x)/sizeof((x)[0]))
 
 //Extra
-int todoscall[23];
-char* nomscall[23];
+//int todoscall[23];
+//char* nomscall[23];
