@@ -346,7 +346,7 @@ scheduler(void)
   c->proc = 0;
   
   int boletoganador = 0;
-  int boletostotal = 0;
+  //int boletostotal = 0;
   int contadort = 0;
   
   for(;;){
