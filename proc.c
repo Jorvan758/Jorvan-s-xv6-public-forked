@@ -345,33 +345,38 @@ scheduler(void)
   struct cpu *c = mycpu();
   c->proc = 0;
   
-  int boletoganador = 0; //boletostotal
-  //int contadort = 0;
+  int boletoganador = 0;
+  int boletostotal = 0;
+  int contadort = 0;
   
   for(;;){
-    //contadort++;
+    contadort++;
+    if (contadort > 1500)
+      {
+      contadort = 0;
+      }
 
     // Enable interrupts on this processor.
     sti();
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
 
-    /*boletostotal = loteriatotal();
+    boletostotal = loteriatotal();
     if (boletostotal > 0)
       {
       boletoganador = randgen(contadort);
       }
-    while (boletostotal < boletoganador)
+    if (boletostotal < boletoganador)
       {
-      boletoganador -= boletostotal;
-      }*/
+      boletoganador = (boletoganador%boletostotal);
+      }
     
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      /*if(p->state == RUNNABLE)
+      if(p->state == RUNNABLE)
         {
-        boletoganador -= p->boletos;
-        }*/
-      if((p->state != RUNNABLE) && (boletoganador >= 0))
+        boletoganador -= (p->boletos);
+        }
+      if((p->state != RUNNABLE) || (boletoganador >= 0))
         {
         continue;
         }
