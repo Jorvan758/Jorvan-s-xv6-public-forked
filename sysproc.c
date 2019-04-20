@@ -75,7 +75,7 @@ sys_showprocs(void)
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
-      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s %s \n", p->pid, states[p->state], p->name);
+      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s %d %s \n", p->pid, states[p->state], p->boletos, p->name);
     }
   exit();
   return 0;
