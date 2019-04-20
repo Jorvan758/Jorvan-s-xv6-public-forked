@@ -345,7 +345,7 @@ scheduler(void)
   struct cpu *c = mycpu();
   c->proc = 0;
   
-  int boletostotal, boletoganador = 0;
+  int boletoganador = 0; //boletostotal
   int contadort = 0;
   
   for(;;){
