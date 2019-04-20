@@ -64,10 +64,18 @@ sys_getprocs(void)
 int
 sys_showprocs(void)
 {
+  static char *states[] = {
+  [UNUSED]    "unused",
+  [EMBRYO]    "embryo",
+  [SLEEPING]  "sleep ",
+  [RUNNABLE]  "runble",
+  [RUNNING]   "run   ",
+  [ZOMBIE]    "zombie"
+  };
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
-      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s %s \n", p->pid, p->state, p->name);
+      if ((p->state == EMBRYO) || (p->state == SLEEPING) || (p->state == RUNNING) || (p->state == RUNNABLE)) cprintf("%d %s %s \n", p->pid, states[p->state], p->name);
     }
   exit();
   return 0;
