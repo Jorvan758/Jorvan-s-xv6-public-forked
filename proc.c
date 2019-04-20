@@ -366,10 +366,10 @@ scheduler(void)
       {
       boletoganador = randgen(contadort);
       }
-    while (boletostotal < boletoganador)
+    /*while (boletostotal < boletoganador)
       {
       boletoganador -= boletostotal;
-      }
+      }*/
     //boletoganador = randgen(contadort);
     cprintf("%d %d \n", boletostotal, boletoganador);
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
