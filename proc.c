@@ -86,7 +86,7 @@ allocproc(void)
   return 0;
 
 found:
-  p->boletos = 500;
+  p->boletos = 53;
   p->state = EMBRYO;
   p->pid = nextpid++;
 
@@ -325,9 +325,9 @@ int loteriatotal(void)
       }
   return boletostotales;
   }
-int randgen(long int a)
+int randgen(int a)
   {
-  long int b=470273,c=967291;
+  long int b=70273,c=32000;
   return (a*b)%c;
   }
 //PAGEBREAK: 42
