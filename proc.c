@@ -346,7 +346,7 @@ scheduler(void)
   c->proc = 0;
   
   int boletoganador = 0;
-  //int boletostotal = 0;
+  int boletostotal = 0;
   int contadort = 0;
   
   for(;;){
@@ -361,8 +361,8 @@ scheduler(void)
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
 
-    /*boletostotal = loteriatotal();
-    if (boletostotal > 0)
+    boletostotal = loteriatotal();
+    /*if (boletostotal > 0)
       {
       boletoganador = randgen(contadort);
       }
@@ -371,7 +371,7 @@ scheduler(void)
       boletoganador = (boletoganador%boletostotal);
       }*/
     boletoganador = randgen(contadort);
-    cprintf("%d \n", boletoganador);
+    cprintf("%d %d \n", boletostotal, boletoganador);
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       /*if(p->state == RUNNABLE)
         {
