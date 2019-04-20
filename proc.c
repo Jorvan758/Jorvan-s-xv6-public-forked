@@ -325,9 +325,9 @@ int loteriatotal(void)
       }
   return boletostotales;
   }
-int randgen(int a)
+int randgen(int a, int c)
   {
-  long int b=70273,c=32000;
+  long int b=70273;
   return (a*b)%c;
   }
 //PAGEBREAK: 42
@@ -364,8 +364,9 @@ scheduler(void)
     boletostotal = loteriatotal();
     if (boletostotal > 0)
       {
-      boletoganador = randgen(contadort);
+      boletoganador = randgen(contadort,boletostotal);
       }
+    else boletoganador = 0;
     /*while (boletostotal < boletoganador)
       {
       boletoganador -= boletostotal;
