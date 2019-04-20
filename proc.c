@@ -86,6 +86,7 @@ allocproc(void)
   return 0;
 
 found:
+  //p->boletos = 500;
   p->state = EMBRYO;
   p->pid = nextpid++;
 
@@ -311,6 +312,24 @@ wait(void)
   }
 }
 
+/*int loteriatotal(void)
+  {
+  struct proc *p;
+  int boletostotales = 0;
+  for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
+      {
+      if(p->state != RUNNABLE)
+        {
+        boletostotales += p->boletos;
+        }
+      }
+  return boletostotales;
+  }
+int randgen(long int a)
+  {
+  long int b=79470273,c=294967291; //4294967291
+  return (a*b)%c;
+  }*/
 //PAGEBREAK: 42
 // Per-CPU process scheduler.
 // Each CPU calls scheduler() after setting itself up.
@@ -326,15 +345,36 @@ scheduler(void)
   struct cpu *c = mycpu();
   c->proc = 0;
   
+  int boletoganador = 0; //boletostotal
+  //int contadort = 0;
+  
   for(;;){
+    //contadort++;
+
     // Enable interrupts on this processor.
     sti();
-
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
+
+    /*boletostotal = loteriatotal();
+    if (boletostotal > 0)
+      {
+      boletoganador = randgen(contadort);
+      }
+    while (boletostotal < boletoganador)
+      {
+      boletoganador -= boletostotal;
+      }*/
+    
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      if(p->state != RUNNABLE)
+      /*if(p->state == RUNNABLE)
+        {
+        boletoganador -= p->boletos;
+        }*/
+      if((p->state != RUNNABLE) && (boletoganador >= 0))
+        {
         continue;
+        }
 
       // Switch to chosen process.  It is the process's job
       // to release ptable.lock and then reacquire it

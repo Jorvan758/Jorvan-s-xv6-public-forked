@@ -65,12 +65,12 @@ int
 sys_showprocs(void)
 {
   static char *states[] = {
-  [UNUSED]    "unused",
-  [EMBRYO]    "embryo",
-  [SLEEPING]  "sleep ",
-  [RUNNABLE]  "runble",
-  [RUNNING]   "run   ",
-  [ZOMBIE]    "zombie"
+  [UNUSED]    " unused ",
+  [EMBRYO]    " embryo ",
+  [SLEEPING]  "sleeping",
+  [RUNNABLE]  "runnable",
+  [RUNNING]   "running ",
+  [ZOMBIE]    " zombie "
   };
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
