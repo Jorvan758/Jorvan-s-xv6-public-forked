@@ -367,18 +367,13 @@ scheduler(void)
       boletoganador = randgen(contadort,boletostotal);
       }
     else boletoganador = 0;
-    /*while (boletostotal < boletoganador)
-      {
-      boletoganador -= boletostotal;
-      }*/
-    //boletoganador = randgen(contadort);
-    cprintf("%d %d \n", boletostotal, boletoganador);
+    //cprintf("%d %d \n", boletostotal, boletoganador);
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      /*if(p->state == RUNNABLE)
+      if(p->state == RUNNABLE)
         {
         boletoganador -= (p->boletos);
-        }*/
-      if(p->state != RUNNABLE) //|| (boletoganador >= 0))
+        }
+      if((p->state != RUNNABLE) || (boletoganador >= 0))
         {
         continue;
         }
