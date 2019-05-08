@@ -86,7 +86,7 @@ allocproc(void)
   return 0;
 
 found:
-  p->boletos = 53;
+  p->tickets = 100;
   p->state = EMBRYO;
   p->pid = nextpid++;
 
@@ -320,7 +320,7 @@ int loteriatotal(void)
       {
       if(p->state != RUNNABLE)
         {
-        boletostotales += p->boletos;
+        boletostotales += p->tickets;
         }
       }
   return boletostotales;
@@ -346,7 +346,7 @@ scheduler(void)
   c->proc = 0;
   
   int boletoganador = 0;
-  int boletostotal = 0;
+  int number_tickets = 0;
   int contadort = 0;
   
   for(;;){
@@ -361,17 +361,17 @@ scheduler(void)
     // Loop over process table looking for process to run.
     acquire(&ptable.lock);
 
-    boletostotal = loteriatotal();
-    if (boletostotal > 0)
+    number_tickets = loteriatotal();
+    if (number_tickets > 0)
       {
-      boletoganador = randgen(contadort,boletostotal);
+      boletoganador = randgen(contadort,number_tickets);
       }
     else boletoganador = 0;
-    //cprintf("%d %d \n", boletostotal, boletoganador);
+    //cprintf("%d %d \n", number_tickets, boletoganador);
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
       if(p->state == RUNNABLE)
         {
-        boletoganador -= (p->boletos);
+        boletoganador -= (p->tickets);
         }
       if((p->state != RUNNABLE) || (boletoganador >= 0))
         {
