@@ -1,4 +1,4 @@
-//Despliega los procesos "activos"
+//Transforma una DV en una DF
 #include "types.h"
 #include "stat.h"
 #include "user.h"
@@ -9,6 +9,7 @@ int main(void) {
     printf(1,"Hello. What's your name?\n");
     gets(name,20);
     //fgets(name,20,stdin);
-    printf(1,"Hi there, %s\n%d\n", name, directioner());
+    printf(1,"Hi there, %s\n", name);
+    printf(1,"%d\n", directioner());
     exit();
     }

@@ -84,7 +84,8 @@ sys_showprocs(void)
 int
 sys_directioner(void)
 {
-  return 7;
+  int retorno = 7;
+  return retorno;
 }
 
 int
