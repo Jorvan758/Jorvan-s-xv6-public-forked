@@ -84,7 +84,7 @@ sys_showprocs(void)
 int
 sys_directioner(void)
 {
-  return "Saludos";
+  return 7;
 }
 
 int
