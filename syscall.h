@@ -22,4 +22,4 @@
 #define SYS_close  21
 #define SYS_getprocs    22
 #define SYS_showprocs   23
-#define sys_directioner 24
+#define SYS_directioner 24
