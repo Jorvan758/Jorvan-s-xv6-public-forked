@@ -5,9 +5,10 @@
 //#include "stdio.h"
 
 int main(void) {
-    //char name[20];
+    char name[20];
     printf(1,"Hello. What's your name?\n");
+    gets(name,20);
     //fgets(name,20,stdin);
-    //printf("Hi there, %d", name);
+    printf(1,"Hi there, %d", name);
     exit();
     }
