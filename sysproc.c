@@ -82,6 +82,12 @@ sys_showprocs(void)
 }
 
 int
+sys_directioner(void)
+{
+  return "Saludos";
+}
+
+int
 sys_sbrk(void)
 {
   int addr;
