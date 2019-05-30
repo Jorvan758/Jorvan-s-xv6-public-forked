@@ -6,7 +6,7 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name Jorvan758
   - git config --local user.email jorgleon@alumnos.uai.cl
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%d/%m/%Y-%H_%M-Tarea_2_terminada')} #Initial_travis_release_based_on_original_code
+  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%d/%m/%Y-%H_%M-Ejercicio_extra')} #Initial_travis_release_based_on_original_code | %d/%m/%Y-%H_%M-Tarea_2_terminada
   - git tag $TRAVIS_TAG
 deploy:
   provider: releases
