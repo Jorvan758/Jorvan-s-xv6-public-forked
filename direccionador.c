@@ -2,11 +2,12 @@
 #include "types.h"
 #include "stat.h"
 #include "user.h"
+#include "stdio.h"
 
 int main(void) {
-    char name[20];
+    //char name[20];
     printf("Hello. What's your name?\n");
-    scanf("%d", &name);
-    printf("Hi there, %d", name);
+    //fgets(name,20,stdin);
+    //printf("Hi there, %d", name);
     exit();
     }
