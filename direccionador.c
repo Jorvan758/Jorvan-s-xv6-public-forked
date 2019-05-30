@@ -9,6 +9,6 @@ int main(void) {
     printf(1,"Hello. What's your name?\n");
     gets(name,20);
     //fgets(name,20,stdin);
-    printf(1,"Hi there, %d", name);
+    printf(1,"Hi there, %s\n", name);
     exit();
     }
