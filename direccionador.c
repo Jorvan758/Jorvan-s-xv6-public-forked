@@ -10,8 +10,8 @@ int main(void) {
     int a;
     for(a=1; a<20; a++){
         if ((name[a-1] == '\\') && (name[a] == 'n')){
-            name[a-1] = '';
-            name[a] = '';
+            name[a-1] = ' ';
+            name[a] = ' ';
             break;
             }
         }
