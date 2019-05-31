@@ -75,7 +75,7 @@ sys_showprocs(void)
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
-      if (p->state != UNUSED) cprintf("%d %s %d %s %s\n", p->pid, states[p->state], p->tickets, p->name, p->kstack);
+      if (p->state != UNUSED) cprintf("%d %s %d %s %d\n", p->pid, states[p->state], p->tickets, p->name, p->kstack);
     }
   exit();
   return 0;

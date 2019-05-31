@@ -15,7 +15,7 @@ int main(void) {
             break;
             }
         }
-    printf(1,"Hi there, %s\n", name);
+    printf(1,"Hi there, %s", name);
     printf(1,"%d\n", directioner());
     //printf(1,"%d\n", directioner());
     exit();
