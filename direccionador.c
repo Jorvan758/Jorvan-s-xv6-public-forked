@@ -20,7 +20,6 @@ int main(void) {
     for(a=2; a<10; a++){
         dir_temp += name[a];
         }
-    //char newname[12];
     printf(1,"La direccion fisica es: %d", dir_temp);
 
     printf(1,"%d\n", directioner());
