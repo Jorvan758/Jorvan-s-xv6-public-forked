@@ -125,7 +125,7 @@ sys_directioner(int a)
 
   cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
 
-  return a*2;
+  return a*3;
   //return retorno;
 }
 

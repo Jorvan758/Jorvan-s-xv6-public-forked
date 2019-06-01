@@ -4,7 +4,7 @@
 #include "user.h"
 
 int main(void) {
-    char name[20];
+    /*char name[20];
     printf(1,"Hola. Dame la direccion virtual:\n");
     gets(name,20);
     int a;
@@ -15,7 +15,7 @@ int main(void) {
             break;
             }
         }
-    printf(1,"La direccion fisica es: %s\n", name);
+    printf(1,"La direccion fisica es: %s\n", name);*/
 
     printf(1,"%d\n", directioner(7));
 
