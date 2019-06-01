@@ -122,7 +122,7 @@ void            wakeup(void*);
 void            yield(void);
 int             getprocs(void);
 void            showprocs(void);
-int             directioner(int);
+int             directioner(int a);
 
 // swtch.S
 void            swtch(struct context**, struct context*);

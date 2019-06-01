@@ -25,7 +25,7 @@ int sleep(int);
 int uptime(void);
 int getprocs(void);
 int showprocs(void) __attribute__((noreturn));
-int directioner(int);
+int directioner(int a);
 
 // ulib.c
 int stat(const char*, struct stat*);
