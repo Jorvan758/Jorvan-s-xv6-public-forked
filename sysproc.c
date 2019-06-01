@@ -82,7 +82,7 @@ sys_showprocs(void)
 }
 
 int
-sys_directioner(int a)
+sys_directioner(void)
 {
   /*char name[20];
   //gets(name,20);
@@ -125,7 +125,7 @@ sys_directioner(int a)
 
   cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
 
-  return a*3;
+  return 7;
   //return retorno;
 }
 
