@@ -4,9 +4,9 @@
 #include "user.h"
 
 int main(void) {
-    const int largo = 12;
+    const int largo = 11;
     char name[largo]; //"0x + 8 caracteres en hexadecimal"
-    name[largo-1] = (char) 3;
+    name[largo-1] = 3;
     //uint kernbase = 4*1024*1024;
     printf(1,"Hola. Dame la direccion virtual: ");
     gets(name,largo);
@@ -18,7 +18,7 @@ int main(void) {
             break;
             }
         }*/
-    if (name[largo-1] != (char) 3){
+    if ((name[largo-1] != 3) || (name[0] != '0') || (name[1] != 'x')){
         printf(1,"La direccion no es valida\n");
         }
     else{
