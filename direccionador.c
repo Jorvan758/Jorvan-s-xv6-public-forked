@@ -19,7 +19,7 @@ int main(void) {
             }
         }
     if (name[largo-1] != '\0'){
-        exit();
+        printf(1,"La direccion no es valida\n");
         }
     else{
         int dir_temp = 0;
