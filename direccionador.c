@@ -4,20 +4,20 @@
 #include "user.h"
 
 int main(void) {
-    const int largo = 11;
+    const int largo = 12;
     char name[largo]; //"0x + 8 caracteres en hexadecimal"
     name[largo-1] = '\0';
     //uint kernbase = 4*1024*1024;
     printf(1,"Hola. Dame la direccion virtual: ");
     gets(name,largo);
     int a;
-    for(a=1; a<largo; a++){
+    /*for(a=1; a<largo; a++){
         if ((name[a-1] == '\\') && (name[a] == 'n')){
             name[a-1] = ' ';
             name[a] = ' ';
             break;
             }
-        }
+        }*/
     if (name[largo-1] != '\0'){
         printf(1,"La direccion no es valida\n");
         }
