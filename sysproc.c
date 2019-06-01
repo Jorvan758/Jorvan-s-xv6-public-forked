@@ -75,7 +75,7 @@ sys_showprocs(void)
   struct proc *p;
   for(p = ptable.proc; p < &ptable.proc[NPROC]; p++)
     {
-      if (p->state != UNUSED) cprintf("%d %s %d %s %d\n", p->pid, states[p->state], p->tickets, p->name, p->kstack);
+      if (p->state != UNUSED) cprintf("%d %s %d %s %s\n", p->pid, states[p->state], p->tickets, p->name, p->pgdir); //kstack
     }
   exit();
   return 0;
@@ -84,8 +84,35 @@ sys_showprocs(void)
 int
 sys_directioner(void)
 {
-  int retorno = 7;
-  return retorno;
+  //int retorno = 7;
+  
+  /*int physical_address;
+  pde_t *pgdir,*pgtab,*pde;
+
+  //must initialise pgdir
+
+  pde = &pgdir[PDX(virtual_address)];
+  if(*pde & PTE_P){
+    pgtab = (pte_t*)V2P(PTE_ADDR(*pde));
+    }
+  else{
+    cprintf("\n PTE Not Present! - Invalid Virtual address\n");
+    return -1;
+    }
+  cprintf("\n ----------------- \n");
+  cprintf(" Page Directory Entry (PDE): %d\n",*pde);
+  cprintf(" PTE_P : %d\n",PTE_P);
+  cprintf("\n ----------------- \n");
+
+  //uva2ka
+  pte_t *pte;
+  pte = &pgtab[PTX(virtual_address)];
+  physical_address=(char*)P2V(PTE_ADDR(*pte));
+
+  cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
+
+  return 7;
+  //return retorno;
 }
 
 int
