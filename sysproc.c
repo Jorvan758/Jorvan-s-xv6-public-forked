@@ -7,8 +7,6 @@
 #include "mmu.h"
 #include "proc.h"
 #include "spinlock.h"
-#include "stat.h"
-#include "user.h"
 
 struct {
   struct spinlock lock;
@@ -84,10 +82,10 @@ sys_showprocs(void)
 }
 
 int
-sys_directioner(void)
+sys_directioner(int a)
 {
-  char name[20];
-  gets(name,20);
+  /*char name[20];
+  //gets(name,20);
   int a;
   for(a=1; a<20; a++){
     if ((name[a-1] == '\\') && (name[a] == 'n')){
@@ -95,8 +93,11 @@ sys_directioner(void)
       name[a] = ' ';
       break;
       }
-    }
-  printf(1,"La direccion fisica es: %s\n", name);
+    }*/
+  //printf(1,"La direccion fisica es: %s\n", name);
+
+
+
   //int retorno = 7;
   
   /*int physical_address;
@@ -124,7 +125,7 @@ sys_directioner(void)
 
   cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
 
-  return 7;
+  return a*2;
   //return retorno;
 }
 
