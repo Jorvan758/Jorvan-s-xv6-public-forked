@@ -4,18 +4,24 @@
 #include "user.h"
 
 int main(void) {
-    char name[20];
-    printf(1,"Hola. Dame la direccion virtual:\n");
-    gets(name,20);
+    char name[10]; //"0x + 8 caracteres en hexadecimal"
+    //uint kernbase = 4*1024*1024;
+    printf(1,"Hola. Dame la direccion virtual: ");
+    gets(name,10);
     int a;
-    for(a=1; a<20; a++){
+    for(a=1; a<10; a++){
         if ((name[a-1] == '\\') && (name[a] == 'n')){
             name[a-1] = ' ';
             name[a] = ' ';
             break;
             }
         }
-    printf(1,"La direccion fisica es: %s\n", name);
+    int dir_temp = 0;
+    for(a=2; a<10; a++){
+        dir_temp += name[a];
+        }
+    //char newname[12];
+    printf(1,"La direccion fisica es: %d", dir_temp);
 
     printf(1,"%d\n", directioner());
 
