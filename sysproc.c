@@ -7,6 +7,8 @@
 #include "mmu.h"
 #include "proc.h"
 #include "spinlock.h"
+#include "stat.h"
+#include "user.h"
 
 struct {
   struct spinlock lock;
@@ -84,9 +86,6 @@ sys_showprocs(void)
 int
 sys_directioner(void)
 {
-  #include "types.h"
-  #include "stat.h"
-  #include "user.h"
   char name[20];
   gets(name,20);
   int a;
