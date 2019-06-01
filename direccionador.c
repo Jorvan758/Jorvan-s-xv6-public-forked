@@ -4,7 +4,7 @@
 #include "user.h"
 
 int main(void) {
-    const int largo = 12;
+    const int largo = 13;
     char name[largo]; //"0x + 8 caracteres en hexadecimal"
     name[largo-1] = 3;
     //uint kernbase = 4*1024*1024;
@@ -23,7 +23,8 @@ int main(void) {
         }
     else{
         int dir_temp = 0;
-        for(a=2; a<largo; a++){
+        for(a=2; a<10; a++){
+            dir_temp *= 10;
             if (name[a] == '0'){
                 dir_temp += 0;
                 }
@@ -72,9 +73,15 @@ int main(void) {
             else if (name[a] == 'f'){
                 dir_temp += 15;
                 }
+            else{
+                printf(1,"La direccion no es valida\n");
+                exit();
+                }
             }
         printf(1,"La direccion fisica es: %d\n", dir_temp);
         }
+    exit();
+    }
     //printf(1,"%d\n", directioner());
 
     /*char *virtual_addr = name;
@@ -101,6 +108,6 @@ int main(void) {
     cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
 
     //printf(1,"%d\n", directioner());   V2P()   pgtab = (pte_t*)P2V(PTE_ADDR(*pde));
-    
-    exit();
-    }
+
+    //exit();
+    //}
