@@ -67,7 +67,7 @@ int main(void) {
             dir_temp += 15;
             }
         }
-    printf(1,"La direccion fisica es: %d", dir_temp);
+    printf(1,"La direccion fisica es: %d\n", dir_temp);
 
     printf(1,"%d\n", directioner());
 
