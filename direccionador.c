@@ -16,6 +16,9 @@ int main(void) {
             break;
             }
         }
+    if (name[10] != '\0'){
+        exit();
+        }
     int dir_temp = 0;
     for(a=2; a<11; a++){
         if (name[a] == '0'){
