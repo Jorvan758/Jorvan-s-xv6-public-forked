@@ -125,7 +125,7 @@ sys_directioner(void)
 
   cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
 
-  return 7;
+  return 1313;
   //return retorno;
 }
 
