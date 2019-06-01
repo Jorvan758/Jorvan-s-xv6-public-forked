@@ -4,8 +4,9 @@
 #include "user.h"
 
 int main(void) {
-    const int largo = 12;
+    const int largo = 11;
     char name[largo]; //"0x + 8 caracteres en hexadecimal"
+    name[largo-1] = '\0';
     //uint kernbase = 4*1024*1024;
     printf(1,"Hola. Dame la direccion virtual: ");
     gets(name,largo);
