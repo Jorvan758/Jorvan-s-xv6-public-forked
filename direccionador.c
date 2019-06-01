@@ -101,5 +101,6 @@ int main(void) {
     cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
 
     //printf(1,"%d\n", directioner());   V2P()   pgtab = (pte_t*)P2V(PTE_ADDR(*pde));
+    
     exit();
     }
