@@ -4,9 +4,10 @@
 #include "user.h"
 
 int main(void) {
-    char name[20];
-    printf(1,"Hello. What's your name?\n");
-    gets(name,20);
+    //char name[20];
+    printf(1,"Hola. Dame la direccion virtual:\n");
+    int a = directioner();
+    /*gets(name,20);
     int a;
     for(a=1; a<20; a++){
         if ((name[a-1] == '\\') && (name[a] == 'n')){
@@ -15,7 +16,8 @@ int main(void) {
             break;
             }
         }
-    printf(1,"Hi there, %s", name);
+    printf(1,"La direccion fisica es: %s\n", name);*/
+
     //printf(1,"%d\n", directioner());
 
     /*char *virtual_addr = name;

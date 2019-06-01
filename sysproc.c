@@ -84,6 +84,17 @@ sys_showprocs(void)
 int
 sys_directioner(void)
 {
+  char name[20];
+  gets(name,20);
+  int a;
+  for(a=1; a<20; a++){
+    if ((name[a-1] == '\\') && (name[a] == 'n')){
+      name[a-1] = ' ';
+      name[a] = ' ';
+      break;
+      }
+    }
+  printf(1,"La direccion fisica es: %s\n", name);
   //int retorno = 7;
   
   /*int physical_address;
