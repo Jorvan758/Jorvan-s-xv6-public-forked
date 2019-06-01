@@ -4,7 +4,7 @@
 #include "user.h"
 
 int main(void) {
-    const int largo = 11;
+    const int largo = 12;
     char name[largo]; //"0x + 8 caracteres en hexadecimal"
     name[largo-1] = 3;
     //uint kernbase = 4*1024*1024;
@@ -75,7 +75,7 @@ int main(void) {
             }
         printf(1,"La direccion fisica es: %d\n", dir_temp);
         }
-    printf(1,"%d\n", directioner());
+    //printf(1,"%d\n", directioner());
 
     /*char *virtual_addr = name;
     int physical_address;
