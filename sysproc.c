@@ -87,7 +87,33 @@ sys_directioner(char* name)
   argstr(0, &name);
   cprintf("Me has dado: %s\n", name);
   struct proc *proceso = myproc();
-  cprintf("%s\n", proceso->pgdir);
+  cprintf("%d\n", proceso->pgdir);
+
+  uint a = PGROUNDDOWN(rcr2()); // round down faulty VA to page start
+  char *mem;
+  mem = kalloc();
+  memset(mem, 0, PGSIZE);
+  //mappages(proc->pgdir, (char*)a, PGSIZE, v2p(mem), PTE_W|PTE_U);
+  pde_t *pgdir = proc->pgdir;
+  void *va = (char*)a; 
+  uint size = PGSIZE;
+  uint pa = v2p(mem);
+  int perm = PTE_W|PTE_U;
+
+  char *a, *last;
+  pte_t *pte;
+  a = (char*)PGROUNDDOWN((uint)va);
+  last = (char*)PGROUNDDOWN(((uint)va) + size - 1);
+  for(;;){
+    if(*pte & PTE_P)
+      panic("remap");
+    *pte = pa | perm | PTE_P;
+    if(a == last)
+      break;
+    a += PGSIZE;
+    pa += PGSIZE;
+    }
+  cprintf("%u\n", pte);
   /*char name[20];
   //gets(name,20);
   int a;
