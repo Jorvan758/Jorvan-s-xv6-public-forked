@@ -94,7 +94,7 @@ sys_directioner(char* name)
   mem = kalloc();
   memset(mem, 0, PGSIZE);
   //mappages(proc->pgdir, (char*)a, PGSIZE, v2p(mem), PTE_W|PTE_U);
-  pde_t *pgdir = proc->pgdir;
+  pde_t *pgdir = proceso->pgdir;
   void *va = (char*)a; 
   uint size = PGSIZE;
   uint pa = v2p(mem);
