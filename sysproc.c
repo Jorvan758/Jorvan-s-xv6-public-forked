@@ -85,7 +85,9 @@ int
 sys_directioner(char* name)
 {
   argstr(0, &name);
-  cprintf("Me has dado: %s\n", name);
+  cprintf("Me has dado: %s", name);
+  struct proc *proceso = myproc();
+  cprintf("Me has dado: %s", proceso->pgdir);
   /*char name[20];
   //gets(name,20);
   int a;
@@ -127,8 +129,7 @@ sys_directioner(char* name)
 
   cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
 
-  return 1313;
-  //return retorno;
+  return 0;
 }
 
 int
