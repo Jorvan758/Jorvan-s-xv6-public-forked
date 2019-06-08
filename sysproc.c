@@ -85,82 +85,81 @@ int
 sys_directioner(char* name)
 {
   argstr(0, &name);
+
   cprintf("Me has dado: %s\n", name);
   struct proc *proceso = myproc();
   cprintf("%d\n", proceso->pgdir);
   cprintf("%d\n", V2P(proceso->pgdir));
 
-  //pte_t *pte;
-  /*pde_t *pgdir,*pgtab,*pde;
-  pte = &pgtab[PTX(virtual_address)];
-  pgtab = (pte_t*)V2P(PTE_ADDR(*pde));*/
-  //int physical_address=(char*)P2V(PTE_ADDR(*pte));
-  /*uint a = PGROUNDDOWN(rcr2()); // round down faulty VA to page start
-  char *mem;
-  mem = kalloc();
-  memset(mem, 0, PGSIZE);
-  //mappages(proc->pgdir, (char*)a, PGSIZE, v2p(mem), PTE_W|PTE_U);
-  pde_t *pgdir = proceso->pgdir;
-  void *va = (char*)a; 
-  uint size = PGSIZE;
-  uint pa = v2p(mem);
-  int perm = PTE_W|PTE_U;
-
-  char *a, *last;
-  pte_t *pte;
-  a = (char*)PGROUNDDOWN((uint)va);
-  last = (char*)PGROUNDDOWN(((uint)va) + size - 1);
-  for(;;){
-    if(*pte & PTE_P)
-      panic("remap");
-    *pte = pa | perm | PTE_P;
-    if(a == last)
-      break;
-    a += PGSIZE;
-    pa += PGSIZE;
-    }*/
-  //cprintf("%d\n", physical_address);
-  /*char name[20];
-  //gets(name,20);
-  int a;
-  for(a=1; a<20; a++){
-    if ((name[a-1] == '\\') && (name[a] == 'n')){
-      name[a-1] = ' ';
-      name[a] = ' ';
-      break;
-      }
-    }*/
-  //printf(1,"La direccion fisica es: %s\n", name);
-
-
-
-  //int retorno = 7;
-  
-  /*int physical_address;
-  pde_t *pgdir,*pgtab,*pde;
-
-  //must initialise pgdir
-
-  pde = &pgdir[PDX(virtual_address)];
-  if(*pde & PTE_P){
-    pgtab = (pte_t*)V2P(PTE_ADDR(*pde));
+  const int largo = 13;
+  char name[largo]; //"0x + 8 caracteres en hexadecimal"
+  name[largo-1] = 3;
+  printf(1,"Hola. Dame la direccion virtual: ");
+  gets(name,largo);
+  uint a;
+  if ((name[largo-1] != 3) || (name[0] != '0') || (name[1] != 'x')){
+    printf(1,"La direccion no es valida\n");
+    exit();
     }
   else{
-    cprintf("\n PTE Not Present! - Invalid Virtual address\n");
-    return -1;
+    uint dir_temp = 0;
+    for(a=2; a<10; a++){
+      dir_temp *= 10;
+      if (name[a] == '0'){
+        dir_temp += 0;
+        }
+      else if (name[a] == '1'){
+        dir_temp += 1;
+        }
+      else if (name[a] == '2'){
+        dir_temp += 2;
+        }
+      else if (name[a] == '3'){
+        dir_temp += 3;
+        }
+      else if (name[a] == '4'){
+        dir_temp += 4;
+        }
+      else if (name[a] == '5'){
+        dir_temp += 5;
+        }
+      else if (name[a] == '6'){
+        dir_temp += 6;
+        }
+      else if (name[a] == '7'){
+        dir_temp += 7;
+        }
+      else if (name[a] == '8'){
+        dir_temp += 8;
+        }
+      else if (name[a] == '9'){
+        dir_temp += 9;
+        }
+      else if (name[a] == 'a'){
+        dir_temp += 10;
+        }
+      else if (name[a] == 'b'){
+        dir_temp += 11;
+        }
+      else if (name[a] == 'c'){
+        dir_temp += 12;
+        }
+      else if (name[a] == 'd'){
+        dir_temp += 13;
+        }
+      else if (name[a] == 'e'){
+        dir_temp += 14;
+        }
+      else if (name[a] == 'f'){
+        dir_temp += 15;
+        }
+      else{
+        printf(1,"La direccion no es valida\n");
+        return 0;;
+        }
+      } 
+    printf(1,"La direccion fisica verdadera es: %d\n", V2P(dir_temp*-1));
     }
-  cprintf("\n ----------------- \n");
-  cprintf(" Page Directory Entry (PDE): %d\n",*pde);
-  cprintf(" PTE_P : %d\n",PTE_P);
-  cprintf("\n ----------------- \n");
-
-  //uva2ka
-  pte_t *pte;
-  pte = &pgtab[PTX(virtual_address)];
-  physical_address=(char*)P2V(PTE_ADDR(*pte));
-
-  cprintf(" --PHYSICAL ADDRESS-- %d\n",physical_address);*/
-
   return 0;
 }
 
