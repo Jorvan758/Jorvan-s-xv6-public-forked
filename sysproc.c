@@ -93,7 +93,7 @@ sys_directioner(char* name)
 
   int a;
   int dir_temp = 0;
-  for(a=2; a<10; a++){
+  for(a=2; a<12; a++){
     dir_temp *= 10;
     if (name[a] == '0'){
       dir_temp += 0;
@@ -149,7 +149,7 @@ sys_directioner(char* name)
       }
     }
   dir_temp = dir_temp*-1;
-  cprintf("n");
+  cprintf("\n");
   cprintf("La direccion fisica verdadera es: %d\n", dir_temp);
   cprintf("La direccion fisica verdadera es: %d\n", V2P(dir_temp));
   return 0;

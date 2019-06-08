@@ -4,7 +4,7 @@
 #include "user.h"
 
 int main(void) {
-    const int largo = 13;
+    const int largo = 15;
     char name[largo]; //"0x + 8 caracteres en hexadecimal"
     name[largo-1] = 3;
     printf(1,"Hola. Dame la direccion virtual: ");
@@ -14,9 +14,9 @@ int main(void) {
         printf(1,"La direccion no es valida\n");
         exit();
         }
-    else{
+    /*else{
         int dir_temp = 0;
-        for(a=2; a<10; a++){
+        for(a=2; a<12; a++){
             dir_temp *= 10;
             if (name[a] == '0'){
                 dir_temp += 0;
@@ -72,7 +72,7 @@ int main(void) {
                 }
             }
         printf(1,"La direccion numerica es: %d\n", dir_temp);
-        }
+        }*/
     printf(1,"List%d\n", directioner(name));
     exit();
     }
