@@ -9,7 +9,7 @@ int main(void) {
     name[largo-1] = 3;
     printf(1,"Hola. Dame la direccion virtual: ");
     gets(name,largo);
-    uint a;
+    //uint a;
     if ((name[largo-1] != 3) || (name[0] != '0') || (name[1] != 'x')){
         printf(1,"La direccion no es valida\n");
         exit();
