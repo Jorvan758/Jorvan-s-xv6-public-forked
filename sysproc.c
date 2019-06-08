@@ -91,7 +91,6 @@ sys_directioner(char* name)
   cprintf("%d\n", proceso->pgdir);
   cprintf("%d\n", V2P(proceso->pgdir));
 
-  const int largo = 13;
   int a;
   uint dir_temp = 0;
   for(a=2; a<10; a++){
