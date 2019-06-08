@@ -82,8 +82,10 @@ sys_showprocs(void)
 }
 
 int
-sys_directioner(void)
+sys_directioner(char* name)
 {
+  argstr(0, &name);
+  printf(1,"Me has dado: %s\n", name);
   /*char name[20];
   //gets(name,20);
   int a;

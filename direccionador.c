@@ -5,12 +5,13 @@
 
 int main(void) {
     const int largo = 13;
+    //uint basekern = 8*(16*16*16*16*16*16*16); //2.147.483.648
     char name[largo]; //"0x + 8 caracteres en hexadecimal"
     name[largo-1] = 3;
     //uint kernbase = 4*1024*1024;
     printf(1,"Hola. Dame la direccion virtual: ");
     gets(name,largo);
-    int a;
+    uint a;
     /*for(a=1; a<largo; a++){
         if ((name[a-1] == '\\') && (name[a] == 'n')){
             name[a-1] = ' ';
@@ -80,6 +81,7 @@ int main(void) {
             }
         printf(1,"La direccion fisica es: %d\n", dir_temp);
         }
+    printf(1,"%d\n", directioner(name));
     exit();
     }
     //printf(1,"%d\n", directioner());
