@@ -92,7 +92,7 @@ sys_directioner(char* name)
   cprintf("%d\n", V2P(proceso->pgdir));
 
   int a;
-  uint dir_temp = 0;
+  int dir_temp = 0;
   for(a=2; a<10; a++){
     dir_temp *= 10;
     if (name[a] == '0'){
@@ -148,7 +148,10 @@ sys_directioner(char* name)
       return 0;
       }
     }
-  cprintf("La direccion fisica verdadera es: %d\n", V2P(dir_temp*-1));
+  dir_temp = dir_temp*-1;
+  cprintf("n");
+  cprintf("La direccion fisica verdadera es: %d\n", dir_temp);
+  cprintf("La direccion fisica verdadera es: %d\n", V2P(dir_temp));
   return 0;
 }
 
