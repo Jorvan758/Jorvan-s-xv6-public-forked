@@ -89,7 +89,12 @@ sys_directioner(char* name)
   struct proc *proceso = myproc();
   cprintf("%d\n", proceso->pgdir);
 
-  uint a = PGROUNDDOWN(rcr2()); // round down faulty VA to page start
+  pte_t *pte;
+  pde_t *pgdir,*pgtab,*pde;
+  pte = &pgtab[PTX(virtual_address)];
+  pgtab = (pte_t*)V2P(PTE_ADDR(*pde));
+  int physical_address=(char*)P2V(PTE_ADDR(*pte));
+  /*uint a = PGROUNDDOWN(rcr2()); // round down faulty VA to page start
   char *mem;
   mem = kalloc();
   memset(mem, 0, PGSIZE);
@@ -112,8 +117,8 @@ sys_directioner(char* name)
       break;
     a += PGSIZE;
     pa += PGSIZE;
-    }
-  cprintf("%u\n", pte);
+    }*/
+  cprintf("%u\n", physical_address);
   /*char name[20];
   //gets(name,20);
   int a;
