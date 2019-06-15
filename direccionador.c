@@ -14,6 +14,11 @@ int main(void) {
         exit();
         }
     int dir_fis = directioner(name);
-    printf(1,"%d\n", dir_fis);
-    exit();
+    if (dir_fis == 0){
+        exit();
+        }
+    else{
+        printf(1,"La direccion fisica es: %d\n", dir_fis);
+        exit();
+        }
     }
