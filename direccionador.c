@@ -13,6 +13,7 @@ int main(void) {
         printf(1,"La direccion no es valida (recuerda iniciar con 0x y despues usar 10 digitos)\n");
         exit();
         }
-    printf(1,"List%d\n", directioner(name));
+    int dir_fis = directioner(name);
+    printf(1,"%d\n", dir_fis);
     exit();
     }

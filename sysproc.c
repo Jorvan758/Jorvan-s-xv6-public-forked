@@ -87,9 +87,9 @@ sys_directioner(char* name)
   argstr(0, &name);
 
   //cprintf("Me has dado: %s\n", name);
-  //struct proc *proceso = myproc();
+  struct proc *proceso = myproc();
   //cprintf("%d\n", proceso->pgdir);
-  //cprintf("%d\n", V2P(proceso->pgdir));
+  cprintf("%d\n", V2P(proceso->pgdir));
 
   int a;
   int dir_temp = 0;
@@ -144,14 +144,14 @@ sys_directioner(char* name)
       dir_temp += 15;
       }
     else{
-      cprintf("La direccion no es valida (recuerda sólo usar número hexadecimales)\n");
+      cprintf("La direccion no es valida (recuerda solo usar numero hexadecimales)\n");
       return 0;
       }
     }
   dir_temp = dir_temp*-1;
   //cprintf("\n");
   //cprintf("La direccion fisica verdadera es: %d\n", dir_temp);
-  //cprintf("La direccion fisica verdadera es: %d\n", V2P(dir_temp));
+  cprintf("La direccion fisica verdadera es: %d\n", V2P(dir_temp));
   return V2P(dir_temp);
 }
 
